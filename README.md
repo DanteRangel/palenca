@@ -60,10 +60,10 @@ docker-compose exec palenca rails db:seed
 Migrations when the container is already running
 
 ```
-docker­ compose run palenca rake db:reset
+docker­-compose exec palenca rails db:reset
 ```
 ```
-docker­ compose run palenca rake db:migrate
+docker­-compose exec palenca rails db:migrate
 ```
 
 With this you can test with `http://localhost:8000`
@@ -128,6 +128,7 @@ Code 401 - Unauthorized Response
     "details": "Incorrect username or password"
 }
 ```
+
 For Didi
 ```
 curl -X POST \
@@ -140,7 +141,6 @@ curl -X POST \
 }
 ' | jq
 ```
-
 Code 200 - Success Response 
 ```
 {
@@ -190,7 +190,7 @@ Code 401 - Unauthorized Response
 
 Or For Didi 
 ```
-curl -X GET \
+curl -X GET \ 
   http://127.0.0.1:8000/uber/profile/uuLDzAeFB-0-vRZ0v0XPWg \
   -H 'cache-control: no-cache' | jq
 ```
