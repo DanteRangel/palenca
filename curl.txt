@@ -1,0 +1,17 @@
+curl -X GET \
+  http://127.0.0.1:8000/ \
+  -H 'cache-control: no-cache' 
+
+curl -X GET \
+  http://127.0.0.1:8000/health \
+  -H 'cache-control: no-cache'
+
+curl -X POST \
+  http://127.0.0.1:8000/uber/login \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' \
+  -d '{
+   "email": "pierre@palenca.com",
+   "password": "MyPwdChingon123"
+}
+'
