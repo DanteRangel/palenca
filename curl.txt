@@ -1,11 +1,12 @@
 curl -X GET \
   http://127.0.0.1:8000/ \
-  -H 'cache-control: no-cache' 
+  -H 'cache-control: no-cache'
 
 curl -X GET \
   http://127.0.0.1:8000/health \
-  -H 'cache-control: no-cache'
+  -H 'cache-control: no-cache' | jq
 
+For Uber
 curl -X POST \
   http://127.0.0.1:8000/uber/login \
   -H 'cache-control: no-cache' \
@@ -14,4 +15,24 @@ curl -X POST \
    "email": "pierre@palenca.com",
    "password": "MyPwdChingon123"
 }
-'
+' | jq
+
+curl -X GET \
+  http://127.0.0.1:8000/uber/profile/uuLDzAeFB-0-vRZ0v0XPWg \
+  -H 'cache-control: no-cache'  | jq
+
+For Didi
+
+curl -X POST \
+  http://127.0.0.1:8000/didi/login \
+  -H 'cache-control: no-cache' \
+  -H 'content-type: application/json' 
+  -d '{
+   "email": "dante@palenca.com",
+   "password": "MyPwdChingon123"
+}
+' | jq
+
+curl -X GET \
+  http://127.0.0.1:8000/didi/profile/OZZxEJjaghpnvL7HyGpSYQ \
+  -H 'cache-control: no-cache' | jq
