@@ -159,6 +159,7 @@ curl -X GET \
   http://127.0.0.1:8000/uber/profile/o65xj4z9zsO1PUiVMziTvw \
   -H 'cache-control: no-cache'  | jq
 ```
+
 ```
 {
     "profile": {
@@ -177,26 +178,21 @@ curl -X GET \
     "message": "SUCCESS"
 }
 ```
+
+Code 401 - Unauthorized Response 
+
 ```
 {
     "message": "CREDENTIALS_INVALID",
     "details": "Incorrect token"
 }
 ```
-Code 401 - Unauthorized Response 
-
-```
-{
-    "message": "CREDENTIALS_INVALID",
-    "details": "Incorrect username or password"
-}
-```
 
 Or For Didi 
 
 ```
-curl -X GET \ 
-  http://127.0.0.1:8000/uber/profile/uuLDzAeFB-0-vRZ0v0XPWg \
+curl -X GET \
+  http://127.0.0.1:8000/didi/profile/OZZxEJjaghpnvL7HyGpSYQ \
   -H 'cache-control: no-cache' | jq
 ```
 
@@ -204,17 +200,17 @@ curl -X GET \
 {
     "profile": {
         "country": "mx",
-        "city_name": "Ciudad de Mexico",
-        "worker_id": "34dc0c89b16fd170eba320ab186d08ed",
-        "first_name": "Pierre",
-        "last_name": "Delarroqua",
-        "email": "pierre@palenca.com",
+        "city_name": "Monterrey",
+        "worker_id": "worker",
+        "first_name": "Dante",
+        "last_name": "Rangel",
+        "email": "dante@palenca.com",
         "phone_prefix": "+52",
-        "phone_number": "5576955981",
-        "rating": "4.8",
-        "lifetime_trips": 1254
+        "phone_number": "5550838196",
+        "rating": "5",
+        "lifetime_trips": 12
     },
-    "platform": "uber",
+    "platform": "didi",
     "message": "SUCCESS"
 }
 ```
