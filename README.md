@@ -99,7 +99,9 @@ docker-compose exec palenca rails test
 ```
 chmod -R 777 tmp/cache/
 ```
-
+### Login endpoint 
+The API is able to support many kind of platform in the url, example
+`uber/login` , `didi/login`, `any_platform/login`
 
 ### Login endpoint 
 
@@ -182,18 +184,22 @@ curl -X GET \
 }
 ```
 Code 401 - Unauthorized Response 
+
 ```
 {
     "message": "CREDENTIALS_INVALID",
     "details": "Incorrect username or password"
 }
+```
 
 Or For Didi 
+
 ```
 curl -X GET \ 
   http://127.0.0.1:8000/uber/profile/uuLDzAeFB-0-vRZ0v0XPWg \
   -H 'cache-control: no-cache' | jq
 ```
+
 ```
 {
     "profile": {
